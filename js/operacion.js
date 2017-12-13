@@ -34,7 +34,7 @@ $(document).ready(function() {
 	function Tiempo_total_servicios(){
 		var suma = $("input:checked").length;
 	}
-	function Precio_total(Tiempo_total_casa()) {
-		// body...
+	function Precio_total() {
+		// Tiempo_total_casa + Tiempo_total_servicio
 	}
 });
