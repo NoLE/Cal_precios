@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calcular Precio</title>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/operacion.js"></script>
+</head>
+<body>
+	<form name="form-price" action="#">
+		Habitacones:
+		<select name="casa" id="rooms">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+		</select>
+		Baños:
+		<select name="casa" id="bathrooms">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+		</select>
+		<br>
+		Servicios Extras:
+		<br>
+		<input type="checkbox" id="planchado_1">1 hora de planchado<br>
+		<input type="checkbox" id="planchado_2">2 hora de planchado<br>
+		<input type="checkbox" id="clean_refri">Limpieza de refrigerador<br>
+		<input type="checkbox" id="clean_horno">Limpieza de horno<br>
+		<input type="checkbox" id="clean_ventana">Limpieza de ventanas<br>
+	</form>
+	<br>
+	Simulador de Precio:
+	<br>
+	Tiempo: <span id="tiempo"></span> Horas <br>
+	Precio: $ <span id="precio_final">15000</span>
+</body>
+</html>
