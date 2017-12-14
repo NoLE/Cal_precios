@@ -18,23 +18,31 @@ $(document).ready(function() {
 $(document).ready(function() {
 	var horab = 1.5;
 	var vhora = 6000;
-	var tiempo_total_serv = 0;
-	$("select").change(function() {
-		var tiempo_casa = 0;
-		function Tiempo_total_casa() {
-			$("select[name=casa").each(function() {
+	var tiempo_casa = 0;
+
+	function Tiempo_total_casa() {
+		$("select[name=casa]").each(function() {
 			tiempo_casa += parseInt($(this).val());
-			});
-			tc = horab + (tiempo_casa * 0.5);
-			return tc;
-			}
-		
-		Tiempo_total_casa();
-	});
+		});
+		return horab + (tiempo_casa * 0.5);
+	}
 	function Tiempo_total_servicios(){
-		var suma = $("input:checked").length;
+		return $("input:checked").length;
 	}
-	function Precio_total() {
-		// Tiempo_total_casa + Tiempo_total_servicio
+	function Tiempo_total() {
+		// Tiempo_total_casa + Tiempo_total_servicios
+		Tiempo_total_casa();
+		Tiempo_total_servicios();
+
+		$("#tiempo").text(Tiempo_total_casa() + Tiempo_total_servicios());
 	}
+	Tiempo_total();
+
+	$("select").change(function() {
+		Tiempo_total();
+	});
+	$("input[type=checkbox]").change(function() {
+		Tiempo_total();
+	});
+
 });
